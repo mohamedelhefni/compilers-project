@@ -228,13 +228,13 @@ func (p *Parser) match(expectedTypes ...TokenType) bool {
 }
 
 func main() {
-	input := "x = (3 + 2) - (2 * 1)\n" +
-		"if (x > 2) {\n" +
-		"    y = 4\n" +
-		"} else {\n" +
-		"    y = 5\n" +
-		"}\n"
-
+  input := `
+x = 3 + 5
+if (x > 2) {
+  y = 3
+}else {
+  y = 5
+} `
 	lexer := NewLexer(input)
 	tokens := lexer.tokenize()
 	fmt.Println("Tokens:", tokens)
